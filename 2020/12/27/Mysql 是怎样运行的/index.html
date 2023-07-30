@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Afret1/image/master/img/20210221105026.png">
 <meta property="article:published_time" content="2020-12-27T07:19:44.000Z">
-<meta property="article:modified_time" content="2023-07-03T01:49:52.973Z">
+<meta property="article:modified_time" content="2023-07-30T08:20:25.431Z">
 <meta property="article:author" content="Afreto">
 <meta property="article:tag" content="note">
 <meta name="twitter:card" content="summary_large_image">
@@ -253,7 +253,12 @@
 <p><span style="color:red">MySQL的缓存系统会监测涉及到的每张表，只要该表的结构或者数据被修改，如对该表使用了<code>INSERT</code>、 <code>UPDATE</code>、<code>DELETE</code>、<code>TRUNCATE TABLE</code>、<code>ALTER TABLE</code>、<code>DROP TABLE</code>或 <code>DROP DATABASE</code>语句，那使用该表的所有高速缓存查询都将变为无效并从高速缓存中删除</span>！</p>
 <p>虽然查询缓存有时可以提升系统性能，但也不得不因维护这块缓存而造成一些开销，比如每次都要去查询缓存中检索，查询请求处理完需要更新查询缓存，维护该查询缓存对应的内存区域。从MySQL 5.7.20开始，不推荐使用查询缓存，并在MySQL 8.0中删除。</p>
 <h1 id="字符集的比较规则"><a href="#字符集的比较规则" class="headerlink" title="字符集的比较规则"></a>字符集的比较规则</h1><p>将一个字符映射成一个二进制数据的过程叫编码, 将一个二进制数据映射到一个字符的过程叫解码</p>
-
+<h1 id="InnoDB-记录存储结构"><a href="#InnoDB-记录存储结构" class="headerlink" title="InnoDB 记录存储结构"></a>InnoDB 记录存储结构</h1><p>InnoDB 是一个将表中的数据存储到磁盘上的存储引擎.</p>
+<p>InnoDB 将数据分成若干个页, 以页作为磁盘和内存间交互的基本单位. </p>
+<p>InnoDB 中页的大小一般为 16KB. 一般情况下, 一次最少从磁盘中读写 16KB 的数据.</p>
+<h2 id="InnoDB-行格式"><a href="#InnoDB-行格式" class="headerlink" title="InnoDB 行格式"></a>InnoDB 行格式</h2><p><code>COMPACT, REDUNDANT, DYNAMIC, COMPRESSED</code></p>
+<h3 id="指定行格式的语法"><a href="#指定行格式的语法" class="headerlink" title="指定行格式的语法"></a>指定行格式的语法</h3><p><code>CREATE TABEL TABEL_NAME () ROW_FORMAT=COMPAC</code></p>
+<h3 id="COMPACT-行格式"><a href="#COMPACT-行格式" class="headerlink" title="COMPACT 行格式"></a>COMPACT 行格式</h3>
               
             </div>
             <hr/>
