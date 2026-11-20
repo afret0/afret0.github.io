@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Afret1/image/master/img/202307030910016.png">
 <meta property="article:published_time" content="2020-08-07T10:16:45.000Z">
-<meta property="article:modified_time" content="2026-11-13T04:23:23.729Z">
+<meta property="article:modified_time" content="2026-11-20T04:52:11.284Z">
 <meta property="article:author" content="Afreto">
 <meta property="article:tag" content="v2ray">
 <meta name="twitter:card" content="summary_large_image">
@@ -248,6 +248,7 @@
 <p>免交互：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">XRAY_SNI=www.microsoft.com \<br>  XRAY_PORT=443 \<br>  XRAY_BBR=y \<br>  XRAY_WARP=n \<br>  bash &lt;(curl -fsSL https://raw.githubusercontent.com/afret0/v2ray/master/onekey_xray.sh)<br></code></pre></td></tr></table></figure>
 
+<h2 id="刷新-wap-列表"><a href="#刷新-wap-列表" class="headerlink" title="刷新 wap 列表"></a>刷新 wap 列表</h2><p><code>ssh root@&lt;服务器IP&gt; &#39;bash /etc/xray/warp-sync.sh&#39;</code></p>
 <h1 id="v2rayA"><a href="#v2rayA" class="headerlink" title="v2rayA"></a>v2rayA</h1><h2 id="xray"><a href="#xray" class="headerlink" title="xray"></a>xray</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run -d \<br>  --restart=always \<br>  --privileged \<br>  --network=host \<br>  --name v2raya \<br>  -e V2RAYA_V2RAY_BIN=/usr/local/bin/xray \<br>  -e V2RAYA_LOG_FILE=/tmp/v2raya.log \<br>  -v /lib/modules:/lib/modules:ro \<br>  -v /etc/resolv.conf:/etc/resolv.conf \<br>  -v /etc/v2raya:/etc/v2raya \<br>  crpi-xtji99kuw7fdubxj.cn-hangzhou.personal.cr.aliyuncs.com/afreto/v2raya<br></code></pre></td></tr></table></figure>
 
 
